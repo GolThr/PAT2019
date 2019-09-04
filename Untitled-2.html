@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	.content{
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		justify-content:center;
+		position:absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+	}
+</style>
+</head>
+
+<body>
+
+<div class="content">
+	<canvas id="myCanvas" width="1500" height="900" style="border:1px solid #000000;"></canvas>
+</div>
+
+<script type="text/javascript">
+	
+	var c=document.getElementById("myCanvas");
+	var ctx=c.getContext("2d");
+	ctx.arc(650,400,100,3*Math.PI/4,7*Math.PI/4);
+	ctx.stroke();
+	
+	ctx.moveTo(650-71,400+71);
+	ctx.lineTo(650+71,400+3*71);
+	ctx.stroke();
+	
+	ctx.beginPath();
+	ctx.arc(790,400,100,5*Math.PI/4,Math.PI/4);
+	ctx.stroke();
+	
+	//ctx.moveTo(790-71,400+71);
+	//ctx.lineTo(650+71,400+3*71);
+	//ctx.stroke();
+
+</script>
+
+</body>
+</html>
