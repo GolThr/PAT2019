@@ -4,7 +4,7 @@ using namespace std;
 int main(){
 	string weekName[7] = {"MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
 	string str1, str2, str3, str4;
-	int i, j, sameCnt = 0;
+	int i, sameCnt = 0;
 	
 	getline(cin, str1);
 	getline(cin, str2);
