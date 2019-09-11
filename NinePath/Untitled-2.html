@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(function(){
+   
+    $(document).on("keypress ",function(e){
+        var currKey=0,CapsLock=0;
+       // var currKey=e.keyCode||e.which||e.charCode;
+        var currKey=e.which;
+        var CapsLock=currKey >=65 && currKey <=90;
+        $("#type")[0].innerHTML=e['type'];
+        $("#currKey")[0].innerHTML=String.fromCharCode(currKey);
+        $("#Decimal")[0].innerHTML=currKey;
+        $("#keyCode")[0].innerHTML=e['keyCode'];
+        $("#charCode")[0].innerHTML=e['charCode'];
+        $("#caps")[0].innerHTML=CapsLock;
+        $("#altKey")[0].innerHTML=e['altKey'];
+        $("#shiftKey")[0].innerHTML=e['shiftKey'];
+        $("#ctrlKey")[0].innerHTML=e['ctrlKey'];
+        $("#repeat")[0].innerHTML=e['repeat'];
+        $("#which")[0].innerHTML=e['which'];
+    })
+
+})
+
+</script>
+<p>请按下任意键看测试效果：</p>
+type:<span id="type"></span><br />
+当前Key:<span id="currKey"></span><br />
+Decimal:<span id="Decimal"></span><br />
+keyCode:<span id="keyCode"></span> <strong>注：IE、Chrome支持，在FF下,keyCode返回非字符按键的Unicode，如果是字符按键返回始终为0</strong><br />
+which:<span id="which"></span> <strong>注：FF,Chrome支持；在IE下,which和charCode始终为undefined ，jquery方式下和keyCode值相同。</strong><br />
+charCode:<span id="charCode"></span> <strong>注：Chrome支持，在FF下，非字符键返回0，如果是字符按键返回Unicode</strong><br />
+大写:<span id="caps"></span><br />
+altKey:<span id="altKey"></span><br />
+ctrlKey:<span id="ctrlKey"></span><br />
+shiftKey:<span id="shiftKey"></span><br />
+repeat:<span id="repeat"></span><br />
+<style type="text/css" media="all">
+    body {color:#999;font:normal 14px tahoma,宋体,Geneva,Arial,sans-serif;}
+    span {color:#f00;font-weight:bold;padding:0 5px;}
+    strong {color:#090;font-weight:normal;padding:0 5px;}
+</style>
+
+</body>
+</html>

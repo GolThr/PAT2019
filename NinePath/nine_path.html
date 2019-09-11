@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+<title>无标题文档</title>
+<script type="text/javascript">
+$(function(){
+    $(document).on("keypress ",function(e){
+        var currKey=0,CapsLock=0;
+       // var currKey=e.keyCode||e.which||e.charCode;
+        var currKey=e.which;
+        var CapsLock=currKey >=65 && currKey <=90;
+        var KEYPressed = String.fromCharCode(currKey);
+		if(KEYPressed == 'W' || KEYPressed == 'w'){
+			MoveUp();
+		}else if(KEYPressed == 'S' || KEYPressed == 's'){
+			MoveDown();
+		}else if(KEYPressed == 'A' || KEYPressed == 'a'){
+			MoveLeft();
+		}else if(KEYPressed == 'D' || KEYPressed == 'd'){
+			MoveRight();
+		}
+    })
+})
+</script>
+<style>
+.nine_path_content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.nine_path_column,.operator_content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.nine_path_column{
+	border: 1px solid #000;
+}
+.nine_path_row,.nine_path_body{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.nine_path_item{
+	border: 1px solid #000;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+}
+</style>
+</head>
+
+<body>
+
+	<div class="nine_path_content">
+    	<div class="nine_path_body">
+        	<div class="nine_path_column">
+                <div class="nine_path_row">
+                    <span id="1" class="nine_path_item">1</span>
+                    <span id="2" class="nine_path_item">2</span>
+                    <span id="3" class="nine_path_item">3</span>
+                </div>
+                <div class="nine_path_row">
+                    <span id="4" class="nine_path_item">4</span>
+                    <span id="5" class="nine_path_item">5</span>
+                    <span id="6" class="nine_path_item">6</span>
+                </div>
+                <div class="nine_path_row">
+                    <span id="7" class="nine_path_item">7</span>
+                    <span id="8" class="nine_path_item">8</span>
+                    <span id="9" class="nine_path_item blank">&nbsp;</span>
+                </div>
+            </div>
+            
+            <div class="operator_content" style="margin-left: 20px;">
+                <button class="op_up" onclick="MoveUp();">向上</button>
+                <button class="op_down" onclick="MoveDown();">向下</button>
+                <button class="op_left" onclick="MoveLeft();">向左</button>
+                <button class="op_right" onclick="MoveRight();">向右</button>
+            </div>
+        </div>
+        
+        <span style="margin-top: 10px;">按键盘WSAD键也可操作</span>
+    	
+    </div>
+
+	<script type="text/javascript">
+		function MoveUp(){
+			var obj;
+			var pos = parseInt($('.blank').attr('id'));
+			var self = $('#'+parseInt(pos));
+			if(pos > 3){
+				obj = $('#'+(pos-3));
+				self.text(obj.text());
+				self.removeClass('blank');
+				obj.text(' ');
+				obj.addClass('blank');
+			}
+		}
+		function MoveDown(){
+			var obj;
+			var pos = parseInt($('.blank').attr('id'));
+			var self = $('#'+parseInt(pos));
+			if(pos < 7){
+				obj = $('#'+(pos+3));
+				self.text(obj.text());
+				self.removeClass('blank');
+				obj.text(' ');
+				obj.addClass('blank');
+			}
+		}
+		function MoveLeft(){
+			var obj;
+			var pos = parseInt($('.blank').attr('id'));
+			var self = $('#'+parseInt(pos));
+			if(pos != 1 && pos != 4 && pos != 7){
+				obj = $('#'+(pos-1));
+				self.text(obj.text());
+				self.removeClass('blank');
+				obj.text(' ');
+				obj.addClass('blank');
+			}
+		}
+		function MoveRight(){
+			var obj;
+			var pos = parseInt($('.blank').attr('id'));
+			var self = $('#'+parseInt(pos));
+			if(pos != 3 && pos != 6 && pos != 9){
+				obj = $('#'+(pos+1));
+				self.text(obj.text());
+				self.removeClass('blank');
+				obj.text(' ');
+				obj.addClass('blank');
+			}
+		}
+	</script>
+
+</body>
+</html>
