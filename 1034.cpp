@@ -3,8 +3,8 @@
 using namespace std;
 
 //最小公约数
-int gcd(int a, int b){
-	int t;
+long long gcd(long long a, long long b){
+	long long t;
 	while(b != 0){
 		t = a % b;
 		a = b;
@@ -14,8 +14,8 @@ int gcd(int a, int b){
 } 
 
 //化简 
-int simp(int a, int b){
-	int t = 0;
+long long simp(long long a, long long b){
+	long long t = 0;
 	a = abs(a);
 	b = abs(b);
 	while(a >= b){
@@ -25,8 +25,8 @@ int simp(int a, int b){
 	return t;
 }
 
-void printFra(int a, int b){
-	int fz, fm, g, t = simp(a, b);
+void printFra(long long a, long long b){
+	long long fz, fm, g, t = simp(a, b);
 	bool flag = false;
 	if(a * b < 0){
 		flag = true;
@@ -64,9 +64,9 @@ void printFra(int a, int b){
 }
 
 int main(){
-	int fz1, fm1, fz2, fm2, t, fz, fm;
+	long long fz1, fm1, fz2, fm2, t, fz, fm;
 	
-	scanf("%d/%d %d/%d", &fz1, &fm1, &fz2, &fm2);
+	scanf("%lld/%lld %lld/%lld", &fz1, &fm1, &fz2, &fm2);
 	
 	//cout << fz1 << " " << fm1 << " " << fz2 << " " << fm2;
 	
