@@ -28,7 +28,7 @@ int simp(int a, int b){
 void printFra(int a, int b){
 	int fz, fm, g, t = simp(a, b);
 	bool flag = false;
-	if(a < 0 || b < 0){
+	if(a * b < 0){
 		flag = true;
 		cout << "(-";
 	}
@@ -116,9 +116,6 @@ int main(){
 		cout << " = ";
 		cout << "Inf";
 	}
-	
-	
-	 
 	
 	return 0;
 } 
