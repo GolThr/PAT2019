@@ -13,34 +13,24 @@ long long gcd(long long a, long long b){
 	return a;
 } 
 
-//化简 
-long long simp(long long a, long long b){
-	long long t = 0;
-	a = abs(a);
-	b = abs(b);
-	while(a >= b){
-		a -= b;
-		t++;
-	}
-	return t;
-}
-
 void printFra(long long a, long long b){
-	long long fz, fm, g, t = simp(a, b);
+	long long fz, fm, g, t = a/b;
 	bool flag = false;
 	if(a * b < 0){
 		flag = true;
-		cout << "(-";
+		cout << "(";
 	}
 	
 	//化简 
-	a = abs(a);
-	b = abs(b);
-	fz = a - t * b;
-	fm = b;
 	if(t != 0){
 		cout << t;
+	}else if(a * b < 0){
+		cout << "-";
 	}
+	a = abs(a);
+	b = abs(b);
+	fz = a % b;
+	fm = b;
 	
 	//约分
 	if(fz != 0){
