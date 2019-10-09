@@ -3,3 +3,9 @@ https://blog.csdn.net/mad_lpx/article/details/8220384
 
 RSA加密算法c++简单实现
 https://www.cnblogs.com/stwzhong/p/3402735.html
+
+西安交大 人工智能 重排九宫格实验报告 - 百度文库
+https://wenku.baidu.com/view/18ae115c0b4c2e3f56276319.html
+
+重排九宫实验报告 - 百度文库
+https://wenku.baidu.com/view/0cddae20192e45361066f5f8.html
