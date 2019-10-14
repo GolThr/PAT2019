@@ -26,14 +26,13 @@ int main(){
 		cnt[s]++;
 	} 
 	cin >> k;
-	for(i = 0; i < k - 1; i++){
+	for(i = 0; i < k; i++){
 		cin >> s;
-		cout << cnt[s] << " ";
+		if(i!=0){
+			cout<<" ";
+		}
+		cout << cnt[s];
 	}
-	cin >> s;
-	cout << cnt[s];
-	
-	
 	
 	return 0;
 } 
