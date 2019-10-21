@@ -1,3 +1,13 @@
+/*****************************
+*注意：
+ 1. 因为是要读入带空格的字符串，所以要这样getline(cin, s);
+ 2. 用getline之前要清空cin流
+ 3. 52行不加break会答案错误  
+*参考：
+ 1. [简书] PAT-B 1044. 火星数字(20)
+	https://www.jianshu.com/p/69b87f6979bb
+*****************************/ 
+
 #include <iostream>
 #include <sstream>
 using namespace std;
@@ -39,7 +49,7 @@ int main(){
 				for(j = 0; j < 13; j++){
 					if(equal(str.begin() + 4, str.end(), trans[j].begin())){
 						num += j;
-						break;
+						break;	//不加break会答案错误 
 					}
 				}
 				cout << num << endl;
