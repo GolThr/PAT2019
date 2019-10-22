@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
 	string a, b;
-	int i, j, t, lena, lenb, na, nb, r;
+	int i, j, k, t, lena, lenb, na, nb, r;
 	
 	cin >> a >> b;
 	lena = a.length();
@@ -14,14 +14,31 @@ int main(){
 	if(lena > lenb){
 		i = 0;
 		j = -t;
+		if(lena % 2 == 0){
+			k = 0;
+		}else{
+			k = 1;
+		}
 	}else if(lena < lenb){
 		i = -t;
 		j = 0;
+		if(lenb % 2 == 0){
+			k = 0;
+		}else{
+			k = 1;
+		}
 	}else{
 		i = j = 0;
+		if(lena % 2 == 0){
+			k = 0;
+		}else{
+			k = 1;
+		}
 	}
 	
-	for(; i < lena || j < lenb; i++, j++){
+	
+	
+	for(; i < lena || j < lenb; i++, j++, k++){
 		if(i < 0){
 			na = 0;
 		}else{
