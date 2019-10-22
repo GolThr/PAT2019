@@ -36,8 +36,6 @@ int main(){
 		}
 	}
 	
-	
-	
 	for(; i < lena || j < lenb; i++, j++, k++){
 		if(i < 0){
 			na = 0;
@@ -49,8 +47,7 @@ int main(){
 		}else{
 			nb = b[j] - '0';
 		}
-//		cout << na << " " << nb << endl;
-		if((abs(i) + 1) % 2 == 0){
+		if(k % 2 == 0){
 			r = nb - na;
 			if(r < 0){
 				r += 10;
