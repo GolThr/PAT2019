@@ -41,7 +41,7 @@ int main(){
 				cin >> ans_n;
 				p++;
 				op_str = pro[p].cor_op;
-				for(l = 0; l < ans_n; l++){
+				for(l = 0, hasWrongAns = false; l < ans_n; l++){
 					cin >> c;
 					for(k = 0; k < pro[p].cor_op_n; k++){
 						if(c == op_str[k]){
@@ -77,14 +77,25 @@ int main(){
 	}
 	for(i = 0, max = 0; i < m; i++){
 		for(j = 0; j < 5; j++){
-			cout << cnt_wr_pro[i].cnt[j] << " ";
+			//cout << cnt_wr_pro[i].cnt[j] << " ";
 			if(cnt_wr_pro[i].cnt[j] > max){
 				max = cnt_wr_pro[i].cnt[j];
 			}
 		}
-		cout << endl;
+		//cout << endl;
 	}
-	cout << max << endl;
+	//cout << max << endl;
+	if(max != 0){
+		for(i = 0; i < m; i++){
+			for(j = 0; j < 5; j++){
+				if(cnt_wr_pro[i].cnt[j] == max){
+					cout << max << " " << i + 1 << "-" << (char)('a' + j) << endl;
+				}
+			}
+		}
+	}else{
+		cout << "Too simple";
+	}
 	
 	return 0;
 } 
